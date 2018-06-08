@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% load dict_filter %}
+<h2><center>Restaurants</center></h2>
+<div class="all-60">
+<table class="ink-table alternating">
+    <thead>
+    <tr>
+        <th class="align-left">Rating</th>
+        <th class="align-left">Name</th>
+        <th class="align-left">Town</th>
+        <th class="align-left">State</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for restaurant in restaurants %}
+<tr>
+        <td>{{ restaurant_ratings|get_item:restaurant.slug }}</td>
+        <td><a href="{{restaurant.slug}}">{{ restaurant.name }}</a></td>
+        <td>{{ restaurant.town }}</</td>
+        <td>{{ restaurant.state }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% endblock %}

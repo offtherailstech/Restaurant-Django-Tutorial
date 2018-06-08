@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Restaurant Reviews</title>
+<link rel="stylesheet" type="text/css" href="/static/css/ink/css/ink.css">
+</head>
+<body>
+<div class="ink-grid">
+<div class="column-group horizontal-gutters">
+   <div id="PageContainer" class="all-90">
+
+       <nav class="ink-navigation">
+    <ul class="menu horizontal black">
+        <li><a href="/restaurants/">Restaurant List</a></li>
+        <li><a href="/addrestaurant/">Add a Restaurant</a></li>
+        <li><a href="/adddish/">Add a Dish</a></li>
+    </ul>
+</nav>
+       {% block content %}
+       {% endblock %}
+   </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<div class="example">
+<h1>{{ restaurant.name }}</h1>
+<p class="condensed-300">{{ restaurant.address }}<br />
+{{ restaurant.town }}, {{ restaurant.state }}</p>
+    </div>
+<br />
+{% for dish in dishes %}
+<h4>{{ dish.name }}</h4>
+<p class="fw-500">Rating: {{ dish.rating }}<br />
+    {{ dish.price }}</p>
+
+<p class="fw-300">{{ dish.comment }}</p>
+{% endfor %}
+<div class="all-45">
+<table class="ink-table alternating">
+    <thead>
+    <tr>
+        <th class="align-left">Rating</th>
+        <th class="align-left">Dish</th>
+        <th class="align-left">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for dish in dishes %}
+    <tr>
+        <td>{{ dish.rating }}</td>
+        <td><a href="{{ restaurant.slug }}/{{ dish.url_slug }}">{{ dish.name }}</</td>
+        <td>${{ dish.price }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

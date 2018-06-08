@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add A Restaurant</h2>
+<form action="/addrestaurant/" method="post" class="ink-form">
+  {% csrf_token %}
+    {{ restaurant_from.as_p }}
+    <input type="submit" value="Add Restaurant">
+</form>
+{% endblock %}
